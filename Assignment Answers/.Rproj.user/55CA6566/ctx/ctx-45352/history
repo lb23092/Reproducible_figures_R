@@ -1,0 +1,453 @@
+setwd("~/Documents/Y3 computer skills/Penguin_answers")
+getwd()
+knitr::opts_chunk$set(echo = TRUE)
+penguins_raw <- penguins_raw
+library(palmerpenguins)
+library(ggplot2)
+library(janitor)
+library(dplyr)
+library(tinytex)
+penguins_raw <- penguins_raw
+dir.create("data")
+dir.create("data")
+write.csv(penguins_raw, "data/penguins_raw.csv")
+write.csv(penguins_raw, "data/penguins_raw.csv")
+penguins_clean_Q1 <- penguins_raw %>%
+clean_names() %>%
+filter(complete.cases(culmen_depth_mm, body_mass_g)) %>%
+select(species, culmen_depth_mm, body_mass_g)
+dir.create("data")
+write.csv(penguins_raw, "data/penguins_raw.csv")
+write.csv(penguins_raw, "data/penguins_raw.csv")
+penguins_raw <- penguins_raw
+penguins_clean_Q1 <- penguins_raw %>%
+clean_names() %>%
+filter(complete.cases(culmen_depth_mm, body_mass_g)) %>%
+select(species, culmen_depth_mm, body_mass_g)
+cleaning <- function(data_raw){ #apply to data_raw
+data_raw %>% #take data_raw
+clean_names() %>% #apply clean_names() function
+remove_empty(c("rows", "cols")) %>% #remove empty rows and columns
+select(-starts_with("delta")) %>% #select specific columns to remove
+select(-comments)
+}
+penguins_raw <- penguins_raw
+penguins_clean_Q1 <- penguins_raw %>%
+clean_names() %>%
+filter(complete.cases(culmen_depth_mm, body_mass_g)) %>%
+select(species, culmen_depth_mm, body_mass_g)
+View(penguins_raw)
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows() %>%
+select(species) %>%
+select(cumen_length_mm) %>%
+select(body_mass_g)
+source("functions/cleaning.r")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows() %>%
+select(species) %>%
+select(cumen_length_mm) %>%
+select(body_mass_g)
+source("functions/cleaning.r")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows()
+penguins_clean_Q2
+source("functions/cleaning.r")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows() %>%
+select(species) %>%
+select(cuLmen_length_mm) %>%
+select(body_mass_g)
+source("functions/cleaning.r")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows() %>%
+select(species) %>%
+select(culmen_length_mm) %>%
+select(body_mass_g)
+source("functions/cleaning.r")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows()
+penguins_clean_Q2
+write.csv(penguins_clean_Q2, "data/ppenguin_clean_Q2")
+write.csv(penguins_clean_Q2, "data/penguins_clean_Q2")
+penguins_clean_Q2
+#all of my functions are stored in my cleaning.r file
+source("functions/cleaning.r")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows() %>%
+subset_columns <- function(penguins_data, c(species,culmen_length_mm, body_mass_g ))
+#all of my functions are stored in my cleaning.r file
+source("functions/cleaning.r")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows() %>%
+subset_columns <- function(penguins_data, c(species,culmen_length_mm, body_mass_g)
+#all of my functions are stored in my cleaning.r file
+source("functions/cleaning.r")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows() %>%
+subset_columns <- function(penguins_data, c(species,culmen_length_mm, body_mass_g)
+#all of my functions are stored in my cleaning.r file
+source("functions/cleaning.r")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows() %>%
+subset_columns <- function(penguins_data, c(species,culmen_length_mm, body_mass_g))
+#all of my functions are stored in my cleaning.r file
+source("functions/cleaning.r")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows() %>%
+subset_columns <- function(penguins_data, c(species,culmen_length_mm, body_mass_g))
+#all of my functions are stored in my cleaning.r file
+source("functions/cleaning.r")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows() %>%
+subset_columns <- function(penguins_data, (species,culmen_length_mm, body_mass_g))
+#all of my functions are stored in my cleaning.r file
+source("functions/cleaning.r")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows() %>%
+subset_columns <- function(penguins_data, species,culmen_length_mm, body_mass_g)
+penguins_clean_Q2
+#all of my functions are stored in my cleaning.r file
+source("functions/cleaning.r")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows()
+penguins_clean_Q2
+write.csv(penguins_clean_Q2, "data/penguins_clean_Q2")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows() %>%
+remove_NA()
+penguins_clean_Q2
+write.csv(penguins_clean_Q2, "data/penguins_clean_Q2")
+explanatory plot(penguins_clean_Q2)
+explanatory_plot(penguins_clean_Q2)
+#all of my functions are stored in my cleaning.r file
+source("functions/cleaning.r")
+#all of my functions are stored in my cleaning.r file
+source("functions/assignment_functions.r")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows() %>%
+remove_NA()
+explanatory_plot(penguins_clean_Q2)
+source("functions/assignment_functions.r")
+explanatory_plot(penguins_clean_Q2)
+source("functions/assignment_functions.r")
+source("functions/assignment_functions.r")
+source("functions/assignment_functions.r")
+source("functions/assignment_functions.r")
+source("functions/assignment_functions.r")
+explanatory_plot(penguins_clean_Q2)
+source("functions/assignment_functions.r")
+explanatory_plot(penguins_clean_Q2)
+source("functions/assignment_functions.r")
+source("functions/assignment_functions.r")
+source("functions/assignment_functions.r")
+explanatory_plot(penguins_clean_Q2)
+source("functions/assignment_functions.r")
+explanatory_plot(penguins_clean_Q2)
+source("functions/assignment_functions.r")
+explanatory_plot(penguins_clean_Q2)
+source("functions/assignment_functions.r")
+explanatory_plot(penguins_clean_Q2)
+explanatory_plot <- function(cleaned_data) {
+ggplot(cleaned_data,
+aes(x = culmen_length_mm,
+y = body_mass_g,
+colour = species)) +
+geom_point(size = 2.5, alpha = 0.9) +
+labs(x = "Culmen Length (mm)", y = "Body Mass (g)", title = "Explanatory Plot") +
+theme_linedraw()
+source("functions/assignment_functions.r")
+explanatory_plot(penguins_clean_Q2)
+source("functions/assignment_functions.r")
+explanatory_plot(penguins_clean_Q2)
+source("functions/assignment_functions.r")
+explanatory_plot(penguins_clean_Q2)
+source("functions/assignment_functions.r")
+explanatory_plot(penguins_clean_Q2)
+source("functions/assignment_functions.r")
+source("functions/assignment_functions.r")
+explanatory_plot(penguins_clean_Q2)
+source("functions/assignment_functions.r")
+explanatory_plot(penguins_clean_Q2)
+source("functions/assignment_functions.r")
+explanatory_plot(penguins_clean_Q2)
+source("functions/assignment_functions.r")
+source("functions/assignment_functions.r")
+source("functions/assignment_functions.r")
+source("functions/assignment_functions.r")
+explanatory_plot <-explanatory_plot(penguins_clean_Q2)
+source("functions/assignment_functions.r")
+source("functions/assignment_functions.r")
+explanatory_plot <-explanatory_plot(penguins_clean_Q2)
+explanatory_plot
+save_results_png(explanatory_plot)
+save_results_png(explanatory_plot)
+save_results_png(explanatory_plot)
+source("functions/assignment_functions.r")
+save_results_png(explanatory_plot)
+source("functions/assignment_functions.r")
+save_results_png(explanatory_plot)
+source("functions/assignment_functions.r")
+save_results_png(explanatory_plot)
+#A function to save the results as a png
+save_exploratory_png <-  function() {
+ggsave("figures/save_exploratory_png",  width = 6, height = 6.8)
+}
+source("functions/assignment_functions.r")
+save_results_png(explanatory_plot)
+source("functions/assignment_functions.r")
+save_results_png(explanatory_plot)
+source("functions/assignment_functions.r")
+save_results_png(explanatory_plot)
+source("functions/assignment_functions.r")
+save_results_png(explanatory_plot)
+source("functions/assignment_functions.r")
+save_exploratory_png(explanatory_plot)
+source("functions/assignment_functions.r")
+save_exploratory_png(explanatory_plot)
+source("functions/assignment_functions.r")
+save_exploratory_png(explanatory_plot)
+source("functions/assignment_functions.r")
+save_exploratory_png(penguins_clean_Q2)
+linear_model <- lm(body_mass_g ~ culmen_length_mm, data = penguins_clean_Q2)
+linear_model <- lm(body_mass_g ~ culmen_length_mm, data = penguins_clean_Q2)
+summary(lm)
+linear_model <- lm(body_mass_g ~ culmen_length_mm, data = penguins_clean_Q2)
+summary(linear_model)
+linear_model_culmen_length_body_mass <- lm(body_mass_g ~ culmen_length_mm, data = penguins_clean_Q2)
+summary(linear_model_culmen_length_body_mass)
+shapiro_test_results <- shapiro.test(residuals(linear_model_culmen_length_body_mass))
+shapiro_test_results
+qqnorm(residuals(linear_model_culmen_length_body_mass))
+qqline(residuals(linear_model_culmen_length_body_mass))
+linear_model_culmen_length_body_mass_transformed <- lm(log(body_mass_g) ~ log(culmen_length_mm), data = penguins_clean_Q2)
+summary(linear_model_culmen_length_body_mass)
+linear_model_culmen_length_body_mass_transformed <- lm((log(body_mass_g)) ~ log((culmen_length_mm)), data = penguins_clean_Q2)
+summary(linear_model_culmen_length_body_mass_transformed)
+shapiro_test_results_transformed <- shapiro.test(residuals(linear_model_culmen_length_body_mass))
+shapiro_test_results_transformed
+shapiro_test_results_transformed <- shapiro.test(residuals(linear_model_culmen_length_body_mass_transformed))
+shapiro_test_results_transformed
+shapiro_test_results <- shapiro.test(residuals(linear_model_culmen_length_body_mass))
+shapiro_test_results
+qq_plot <-qqnorm(residuals(linear_model_culmen_length_body_mass)) +
+qqline(residuals(linear_model_culmen_length_body_mass))
+qq_plot <-qqnorm(residuals(linear_model_culmen_length_body_mass)) qqline(residuals(linear_model_culmen_length_body_mass))
+qq_plot <-qqnorm(residuals(linear_model_culmen_length_body_mass))
+qq_plot <-qqnorm(residuals(linear_model_culmen_length_body_mass))
+qq_plot_line <- qqplot + qqline(residuals(linear_model_culmen_length_body_mass))
+qq_plot_line
+qq_plot <-qqnorm(residuals(linear_model_culmen_length_body_mass))
+qq_plot_line <- qqplot + qqline(residuals(linear_model_culmen_length_body_mass))
+shapiro_test_results_transformed <- shapiro.test(residuals(linear_model_culmen_length_body_mass_transformed))
+shapiro_test_results_transformed
+qqplot_line_transformed <- qqnorm(residuals(linear_model_culmen_length_body_mass)) + qqline(residuals(linear_model_culmen_length_body_mass))
+qqplot_line_transformed
+shapiro_test_results_transformed <- shapiro.test(residuals(linear_model_culmen_length_body_mass_transformed))
+shapiro_test_results_transformed
+qqplot_line_transformed <- qqnorm(residuals(linear_model_culmen_length_body_mass)) + qqline(residuals(linear_model_culmen_length_body_mass))
+shapiro_test_results_transformed <- shapiro.test(residuals(linear_model_culmen_length_body_mass_transformed))
+shapiro_test_results_transformed
+qqplot_line_transformed <- qqnorm(residuals(linear_model_culmen_length_body_mass_transformed)) + qqline(residuals(linear_model_culmen_length_body_mass_transformed))
+shapiro_test_results_transformed <- shapiro.test(residuals(linear_model_culmen_length_body_mass_transformed))
+shapiro_test_results_transformed
+qqqnorm(residuals(linear_model_culmen_length_body_mass_transformed))  qqline(residuals(linear_model_culmen_length_body_mass_transformed))
+shapiro_test_results_transformed <- shapiro.test(residuals(linear_model_culmen_length_body_mass_transformed))
+shapiro_test_results_transformed
+qqqnorm(residuals(linear_model_culmen_length_body_mass_transformed))  qqline(residuals(linear_model_culmen_length_body_mass_transformed))
+qqnorm(residuals(linear_model_culmen_length_body_mass))
+qqplot + qqline(residuals(linear_model_culmen_length_body_mass))
+qqnorm(residuals(linear_model_culmen_length_body_mass))
+qqplot + qqline(residuals(linear_model_culmen_length_body_mass))
+shapiro_test_results_transformed <- shapiro.test(residuals(linear_model_culmen_length_body_mass_transformed))
+shapiro_test_results_transformed
+qqqnorm(residuals(linear_model_culmen_length_body_mass_transformed))  qqline(residuals(linear_model_culmen_length_body_mass_transformed))
+qqqnorm(residuals(linear_model_culmen_length_body_mass_transformed))  qqline(residuals(linear_model_culmen_length_body_mass_transformed))
+shapiro_test_results_transformed <- shapiro.test(residuals(linear_model_culmen_length_body_mass_transformed))
+shapiro_test_results_transformed
+qqqnorm(residuals(linear_model_culmen_length_body_mass_transformed)) qqline(residuals(linear_model_culmen_length_body_mass_transformed))
+shapiro_test_results_transformed <- shapiro.test(residuals(linear_model_culmen_length_body_mass_transformed))
+shapiro_test_results_transformed
+qqqnorm(residuals(linear_model_culmen_length_body_mass_transformed))
+qqnorm(residuals(linear_model_culmen_length_body_mass))
+qqplot + qqline(residuals(linear_model_culmen_length_body_mass))
+qqnorm(residuals(linear_model_culmen_length_body_mass))
+qqline(residuals(linear_model_culmen_length_body_mass))
+shapiro_test_results_transformed <- shapiro.test(residuals(linear_model_culmen_length_body_mass_transformed))
+shapiro_test_results_transformed
+qqnorm(residuals(linear_model_culmen_length_body_mass_transformed))
+qqline(residuals(linear_model_culmen_length_body_mass_transformed))
+exp(6.4427)
+exp(0.4755)
+linear_model_culmen_length_body_mass_transformed <- lm((log(body_mass_g)) ~ ((log(culmen_length_mm)), data = penguins_clean_Q2)
+linear_model_culmen_length_body_mass_transformed <- lm((log(body_mass_g)) ~ (log(culmen_length_mm)), data = penguins_clean_Q2)
+summary(linear_model_culmen_length_body_mass_transformed)
+shapiro_test_results_transformed <- shapiro.test(residuals(linear_model_culmen_length_body_mass_transformed))
+shapiro_test_results_transformed
+qqnorm(residuals(linear_model_culmen_length_body_mass_transformed))
+qqline(residuals(linear_model_culmen_length_body_mass_transformed))
+sink("package_information.txt")
+installed_packages <- installed.packages()
+print(installed_packages)
+ink()
+View(installed_packages)
+sink("package_information.txt")
+installed_packages <- installed.packages()
+print(installed_packages)
+ink()
+sink("package_information.txt")
+penguins_clean_Q1 <- penguins_raw %>%
+clean_names() %>%
+filter(complete.cases(culmen_depth_mm, body_mass_g)) %>%
+select(species, culmen_depth_mm, body_mass_g)
+dir.create("data")
+write.csv(penguins_raw, "data/penguins_raw.csv")
+penguins_raw <- penguins_raw
+penguins_clean_Q1 <- penguins_raw %>%
+clean_names() %>%
+filter(complete.cases(culmen_depth_mm, body_mass_g)) %>%
+select(species, culmen_depth_mm, body_mass_g)
+misleading_graph <-ggplot(penguins_clean_Q1, aes(x = culmen_depth_mm, y = body_mass_g)) +
+geom_point(size =1, alpha = 0.4) +
+geom_smooth(method = "lm", se = F, color = "black") +
+labs(x = "Culmen depth (mm)", y = "Body mass (g)", title = "The relationship between Culmen depth and Body mass in Palmer Penguins")+
+ylim(0,6000) +
+theme_bw()
+misleading_graph
+ggplot(penguins_clean_Q1, aes(x = culmen_depth_mm, y = body_mass_g, color = species)) +
+geom_point() +
+geom_smooth(method = "lm", se = FALSE, size = 1.5) +
+labs(x = "Culmen Length (mm)", y = "Body mass (g)", title = "The relationship between Culmen depth and Body mass
+accross different species of Palmer Penguins") +
+theme_bw()
+ggplot(penguins_clean_Q1, aes(x = culmen_depth_mm, y = body_mass_g, color = species)) +
+geom_point() +
+geom_smooth(method = "lm", se = FALSE, size = 1.5) +
+labs(x = "Culmen Length (mm)", y = "Body mass (g)", title = "The relationship between Culmen depth and Body mass
+accross different species of Palmer Penguins") +
+theme_bw()
+ggplot(penguins_clean_Q1, aes(x = culmen_depth_mm, y = body_mass_g, color = species)) +
+geom_point() +
+geom_smooth(method = "lm", se = FALSE, size = 1.5) +
+labs(x = "Culmen Length (mm)", y = "Body mass (g)", title = "The relationship between Culmen depth and Body mass
+accross different species of Palmer Penguins") +
+theme_bw()
+improved_graph <- ggplot(penguins_clean_Q1, aes(x = culmen_depth_mm, y = body_mass_g, color = species)) +
+geom_point() +
+geom_smooth(method = "lm", se = FALSE, size = 1.5) +
+labs(x = "Culmen Length (mm)", y = "Body mass (g)", title = "The relationship between Culmen depth and Body mass
+accross different species of Palmer Penguins") +
+theme_bw()
+improved_graph
+# Assuming you have created ggplot objects: misleading_graph and improved_graph
+# Save the misleading graph as a file (e.g., PNG)
+ggsave("misleading_graph.png", plot = misleading_graph, width = 8, height = 6, units = "in")
+# Save the improved graph as a file (e.g., JPEG)
+ggsave("improved_graph.jpg", plot = improved_graph, width = 8, height = 6, units = "in")
+ggsave("figures/misleading_graph.png", plot = misleading_graph, width = 8, height = 6, units = "in")
+ggsave("figures/improved_graph.jpg", plot = improved_graph, width = 8, height = 6, units = "in")
+ggsave("figures/Q1_misleading_graph.png", plot = misleading_graph, width = 8, height = 6, units = "in")
+ggsave("figures/Q1_improved_graph.jpg", plot = improved_graph, width = 8, height = 6, units = "in")
+#all of my functions are stored in my cleaning.r file
+source("functions/assignment_functions.r")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows() %>%
+remove_NA()
+write.csv(penguins_clean_Q1, "data/penguins_clean_Q1")
+explanatory_plot <-explanatory_plot(penguins_clean_Q2)
+explanatory_plot
+ggsave("figures/Q2_exploratory_graph", plot = improved_graph, width = 8, height = 6, units = "in")
+ggsave("figures/Q2_exploratory_plot", plot = explanatory_plot, width = 8, height = 6, units = "in")
+ggsave("figures/Q2_exploratory_plot.png", plot = explanatory_plot, width = 8, height = 6, units = "in")
+linear_model_culmen_length_body_mass <- lm(body_mass_g ~ culmen_length_mm, data = penguins_clean_Q2)
+summary(linear_model_culmen_length_body_mass)
+summary(linear_model_culmen_length_body_mass)
+summary(linear_model_culmen_length_body_mass)
+linear_model_culmen_length_body_mass <- lm(body_mass_g ~ culmen_length_mm, data = penguins_clean_Q2)
+summary(linear_model_culmen_length_body_mass)
+shapiro_test_results <- shapiro.test(residuals(linear_model_culmen_length_body_mass))
+shapiro_test_results
+View(shapiro_test_results)
+knitr::opts_chunk$set(echo = TRUE)
+install.packages("palmer penguins")
+install.packages("ggplot2")
+install.packages("janitor")
+install.packages("dplyr")
+install.packages("tinytex")
+library(palmerpenguins)
+library(ggplot2)
+library(janitor)
+library(dplyr)
+library(tinytex)
+sink("package_information.txt")
+dir.create("data")
+write.csv(penguins_raw, "data/penguins_raw.csv")
+penguins_raw <- penguins_raw
+penguins_clean_Q1 <- penguins_raw %>%
+clean_names() %>%
+filter(complete.cases(culmen_depth_mm, body_mass_g)) %>%
+select(species, culmen_depth_mm, body_mass_g)
+write.csv(penguins_clean_Q1, "data/penguins_clean_Q1")
+misleading_graph <-ggplot(penguins_clean_Q1, aes(x = culmen_depth_mm, y = body_mass_g)) +
+geom_point(size =1, alpha = 0.4) +
+geom_smooth(method = "lm", se = F, color = "black") +
+labs(x = "Culmen depth (mm)", y = "Body mass (g)", title = "The relationship between Culmen depth and Body mass in Palmer Penguins")+
+ylim(0,6000) +
+theme_bw()
+misleading_graph
+View(clean_column_names)
+improved_graph <- ggplot(penguins_clean_Q1, aes(x = culmen_depth_mm, y = body_mass_g, color = species)) +
+geom_point() +
+geom_smooth(method = "lm", se = FALSE, size = 1.5) +
+labs(x = "Culmen Length (mm)", y = "Body mass (g)", title = "The relationship between Culmen depth and Body mass
+accross different species of Palmer Penguins") +
+theme_bw()
+improved_graph
+ggsave("figures/Q1_misleading_graph.png", plot = misleading_graph, width = 8, height = 6, units = "in")
+ggsave("figures/Q1_improved_graph.jpg", plot = improved_graph, width = 8, height = 6, units = "in")
+source("functions/assignment_functions.r")
+penguins_clean_Q2 <- penguins_raw  %>%
+clean_column_names() %>%
+shorten_species() %>%
+remove_empty_columns_rows() %>%
+remove_NA()
+write.csv(penguins_clean_Q2, "data/penguins_clean_Q2")
+explanatory_plot <-explanatory_plot(penguins_clean_Q2)
+explanatory_plot
+ggsave("figures/Q2_exploratory_plot.png", plot = explanatory_plot, width = 8, height = 6, units = "in")
+linear_model_culmen_length_body_mass <- lm(body_mass_g ~ culmen_length_mm, data = penguins_clean_Q2)
+summary(linear_model_culmen_length_body_mass)

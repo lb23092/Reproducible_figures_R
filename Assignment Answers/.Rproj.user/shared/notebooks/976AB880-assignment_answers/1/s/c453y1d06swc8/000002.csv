@@ -1,0 +1,4 @@
+"0","penguins_clean_Q1 <- penguins_raw %>%"
+"0","  clean_names() %>%  "
+"0","  filter(complete.cases(culmen_depth_mm, body_mass_g)) %>%"
+"0","  select(species, culmen_depth_mm, body_mass_g)"

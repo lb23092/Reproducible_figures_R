@@ -1,0 +1,15 @@
+"0","improved_graph <- ggplot(penguins_clean_Q1, aes(x = culmen_depth_mm, y = body_mass_g, color = species)) +"
+"0","  geom_point() +"
+"0","  geom_smooth(method = ""lm"", se = FALSE, size = 1.5) +"
+"0","  labs(x = ""Culmen Length (mm)"", y = ""Body mass (g)"", title = ""The relationship between Culmen depth and Body mass "
+"0","       accross different species of Palmer Penguins"") +"
+"0","  theme_bw()"
+"2","Warning:"
+"2"," Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
+"
+"0","improved_graph"
+"2","`geom_smooth()` using formula = 'y ~ x'
+"

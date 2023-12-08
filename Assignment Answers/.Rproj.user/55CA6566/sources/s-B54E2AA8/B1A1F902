@@ -1,0 +1,28 @@
+{
+    "id": "B1A1F902",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1701991171008.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "id": "796b14c1d6ef4fa981dc4bfec0a2fa4e",
+        "name": "shapiro_test_results",
+        "title": "shapiro_test_results",
+        "language": "R",
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 140714365144544,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1701991171008,
+    "read_only": false,
+    "read_only_alternatives": []
+}

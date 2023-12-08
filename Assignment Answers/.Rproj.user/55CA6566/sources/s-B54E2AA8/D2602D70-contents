@@ -1,0 +1,67 @@
+---
+title: "Assignment answers"
+author: "Alana"
+date: "07/12/2023"
+output: html_document
+---
+
+# **Question 1)**
+## *Create a figure using the Palmer Penguin dataset that is correct but badly communicates the data. - Do not make a boxplot*
+
+Installing packages:
+```{r}
+#install.packages("palmerpenguins")
+#install.packages("ggplot2")
+#install.packages("janitor")
+#install.packages("dplyr")
+#install.packages("tinytex")
+```
+
+Attaching packages:
+```{r}
+library(palmerpenguins)
+library(ggplot2)
+library(janitor)
+library(dplyr)
+library(tinytex)
+```
+
+Preserve raw data:
+```{r}
+#setwd("~/Documents/Y3 computer skills/PenguinsAssignment")
+#write.csv(penguins_raw, "penguins_raw.csv")
+#getwd()
+```
+
+Cleaning the raw data using a pipeline
+```{r}
+penguins_clean_Q1 <- penguins_raw %>%
+  clean_names() %>%  
+  filter(complete.cases(culmen_depth_mm, body_mass_g)) %>%
+  select(species, culmen_depth_mm, body_mass_g)
+```
+
+I want to see relationship between culmen length and body mass:
+
+```{r}
+misleading_graph <-ggplot(penguins_clean_Q1, aes(x = culmen_depth_mm, y = body_mass_g)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = F, color = "black")+
+  labs(x = "Culmen depth (mm)", y = "Body mass (g)", title = "The relationship between Culmen depth and Body mass in Palmer Penguins")+
+  ylim(0,6000)
+  theme_bw()
+
+misleading_graph
+```
+
+```{r}
+
+ggplot(penguins_clean_Q1, aes(x = culmen_depth_mm, y = body_mass_g, color = species)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, size = 1.5) +
+  labs(x = "Culmen Length (mm)", y = "Body mass (g)", title = "The relationship between Culmen depth and Body mass 
+       accross different species of Palmer Penguins") +
+  theme_bw()
+
+```
+

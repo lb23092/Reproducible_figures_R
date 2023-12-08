@@ -1,0 +1,4 @@
+"0","shapiro_test_results_transformed <- shapiro.test(residuals(linear_model_culmen_length_body_mass_transformed))"
+"0","shapiro_test_results_transformed"
+"0",""
+"0","transformed_qqplot <-qqnorm(residuals(linear_model_culmen_length_body_mass_transformed))"
