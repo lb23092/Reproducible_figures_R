@@ -1,4 +1,4 @@
-# How to use my code
+# Instructions: 
 
 1) Press the green code button
 2) Download the zip file onto your local computer
