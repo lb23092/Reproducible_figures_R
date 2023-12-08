@@ -3,12 +3,18 @@ title: "Assignment answers"
 output:
   html_document: default
   pdf_document: default
-date: "2023-10-09"
+date: "2023-12-09"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+## How to use this document:
+
+This HTML contains my code, and the answers to the assignment questions.
+
+However, if you want to be able to run the code yourself, visit my GitHub repository and follow the instructions provided: <https://github.com/lb23092/Reproducible_figures_R.git>
 
 ## QUESTION 01: Data Visualisation for Science Communication
 
@@ -220,6 +226,15 @@ final_intercept
 final_slope
 ```
 
+I created a final figure for my results, by inputting the cleaned data into my pre-defined function final_linear_model_plot(). Remember, that on this graph, the two variables have been log-transformed:
+
+```{r}
+source("functions/assignment_functions.r")
+final_linear_model_plot(penguins_clean_Q2)
+final_linear_model_plot
+
+```
+
 ### Results & Discussion
 
 **The results of my linear regression are:**
@@ -241,30 +256,73 @@ Overall, there is no significant relationship between Culmen length and body mas
 
 ### a) GitHub
 
-*Upload your RProject you created for **Question 2** and any files and subfolders used to GitHub. Do not include any identifiers such as your name. Make sure your GitHub repo is public.*
+[*My GitHub link:*]{.ul}
 
 [*https://github.com/lb23092/Reproducible_figures_R.git*](https://github.com/lb23092/Reproducible_figures_R.git){.uri}
 
-*You will be marked on your repo organisation and readability.*
+[*Partner's GitHub link:*]{.ul}
 
-### b) Share your repo with a partner, download, and try to run their data pipeline.
-
-*Partner's GitHub link:*
-
-*You **must** provide this so I can verify there is no plagiarism between you and your partner.*
+<https://github.com/1066509/penguinProject_homework.git>
 
 ### c) Reflect on your experience running their code. (300-500 words)
 
 -   *What elements of your partner's code helped you to understand their data pipeline?*
 
+    Within their project, they defined functions in separate files, and successfully called them into the code on their markdown file. Whenever they called them, they signposted to this file which was well-annotated so that you knew what each was doing [e.g. line 232]. Furthermore, whenever they apply a pipe, they displayed the output underneath by recalling the object name [e.g. line 282]. This meant that I was able to refer to the output to help me understand the code.
+
 -   *Did it run? Did you need to fix anything?*
+
+    After creating a project from their repository as instructed by the README.md file, all the student's code ran correctly without any errors. Therefore, nothing needed to be fixed.
 
 -   *What suggestions would you make for improving their code to make it more understandable or reproducible, and why?*
 
+    In their introduction [line 207-209], although they mentioned 'Palmer penguins', they referred to it as the dataset. However, 'Palmer penguins' is actually the package in which the data set, 'penguins_raw' is stored. Making this clearer would allow you to better understand the rest of the code, because otherwise, you are left wondering where the object penguins_raw has come from. When filtering the data, on occasions, the annotations did not specify how exactly this was being done. Although it is perhaps intuitive from looking at the code what the functions were doing e.g. subset_columns() [line 294], specifying how you could edit it for different variables would enhance the reproducibility. More-detailed annotations would also be beneficial for the statistical tests. For example, for complex analysis such as ANOVA [line 356], I would struggle to apply the same function without knowing which variables to place where.
+
 -   *If you needed to alter your partner's figure using their code, do you think that would be easy or difficult, and why?*
+
+    When looking at the code they used to produce their figure, it was obvious that they used a pre-defined function. This informed me that I had to check their "plotting_homework.R" file to inspect the function parameters. Firstly, the fact that it was placed in a custom function immediately enhances reproducibility. Because, if I wanted to include it in my own work and edit it later, I would be able to do so by simply editing this master-function so that whenever it was ran, the changes would be applied. Saying this, within the separate file, further annotations explaining each stage of the pipeline would make it easier for me to re-use later with different variables and aesthetics. An improvement would be to include more function parameters, such as colour, labels, and title, rather than hard-coding these ggplot attributes. This makes it possible to reuse the plotting function several times within your main code, where you then specify the appearance you want.
 
 ### d) Reflect on your own code based on your experience with your partner's code and their review of yours. (300-500 words)
 
+[For reference, here is the feedback I received from my partner:]{.ul}
+
+*My partner clearly explained each step in detail, making the
+pipeline very easy to follow throughout. This included explaining why they were
+going to do each step, and also clearly explaining conclusions drawn from the
+data. The code in each chunk is also laid out clearly, with each object and
+function described by human understandable names and laid out in snake case.
+All required packages had lines of code to install them, meaning each step of
+the code ran, if you removed the hashtags and ran these lines. If there had
+been a mistake, it would have been easy to trace it back due to the format of
+the names used and the fact that the clean and raw has been stored.*
+
+*To make the code more understandable, it might have been
+useful to include a line of code that runs the clean data object:
+penguins_clean_Q2 in line 168. This could be the head() function or names(), to
+see the changes which have been made to the dataset upon cleaning. A couple of
+the object names within the statistical methods section could also have been
+shortened to make the code more readable. Although they clearly explain what
+the object is showing, the explanation ahead of the code is able to do this
+alone, and making the object names shorter might have made it easier to
+interpret the lines of code.*
+
+*To make the code more reproducible, it might have helped to
+have if/else statements for installation of the packages. This means that these
+lines of code can be run through and it doesn't involve user effort of removing
+hashtags from the names of the packages they don't have. Without removing these
+hashtags, users will not be able to install the packages, and therefore some
+packages may not be installed for them.*
+
+[My answers:]{.ul}
+
 -   *What improvements did they suggest, and do you agree?*
 
+The key thing that I agree with is that I should have used functions such as head() and names() to display output for my cleaning pipelines. Without this, the changes I'm making to the dataset would be unclear to the reader. Although I did provide a brief description of the functions in my "assignment_functions.r", this simply consisted of a title e.g. *"A function to make sure the species names are shortened"*. Therefore, to ensure full reproducibility, what each line does should have been specified in all of my functions. I also completely agree with their final suggestion of including *if/else* statements to install packages, as a way to minimize the user effort required to remove the hash tags. In fact, I was already impressed by their use of this before receiving this feedback, given that its a great way to ensure the packages are only installed if they haven't been done so already.
+
 -   *What did you learn about writing code for other people?*
+
+Firstly, I have learnt a plethora of techniques that can be used to enhance reproducibility. Notably, prior to carrying out this assignment, I had never pre-defined custom functions before. Now however, I understand that this extremely useful for reusing code where one uses different parameters in multiple locations. Storing functions in a separate file also allows you to make edits, and these alterations will then be applied every time you run them in your main code.Perhaps the most important thing I've discovered however is that you must clearly, and rigorously annotate everything; the steps involved in your analysis, the explanation of your logic, signposting to other files, plus you should provide detailed instructions of how to use and modify your functions and pipelines. What *you* think is obvious within the code, may not be obvious to the reader, and so you should assume very little prior knowledge.
+
+The most interesting think that I've taken from this assignment, is that you learn the most about reproducibility when you study someone else's work. When looking at and running my partner's code, issues that I hadn't previously spotted in my code became evident. For example, I realized that functions in general could be made more useful in some instances if you are able to add-in your own paramaters when calling, rather than doing so by editing the function file. By doing this, the same function can be used a wider range of different contexts. Saying this, increasing the complexity of functions in this way must be accompanied by more detailed documentation. This would involve annotating every line to explain what it does, plus including instructions for modification. Style guides provide agreed-upon standards on how exactly to format and detail code and annotations, making everyone's code more consistent.
+
+In conclusion, to be able to create reproducible code, you must be informed about the techniques available. I also believe that its important to be regularly reading the code of others in your field to pick up ideas that you can incorporate in your own work.

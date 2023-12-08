@@ -67,3 +67,29 @@ save_explanatory_png <- function(data, file_path = "figures/explanatory_plot.png
   ggsave(file_path, plot, width = width, height = height, dpi = dpi)
 }
 
+#A function to create the final graph with transformed data
+#note: instead of inputting transformed data, I just log the aestetics x and y
+
+final_linear_model_plot <- function(cleaned_data) {
+  ggplot(cleaned_data,
+         aes(x = log(culmen_length_mm), 
+             y = log(body_mass_g))) + 
+    geom_point(size = 2.5, alpha = 0.7) +
+    geom_smooth(method = "lm", se = FALSE, linewidth = 2, color = "hot pink") + 
+    ylim(7.5,9.0) +
+    xlim(3.57,4.01) +
+    labs(x = "log(Culmen Length (mm))", y = "log(Body Mass (g))", title = "The relationship between Culmen Length and Body Mass for Palmer Penguins") +
+    theme_light()
+}
+
+
+
+
+
+
+
+
+
+
+
+
