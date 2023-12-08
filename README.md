@@ -7,6 +7,6 @@
 
 Once you have done this, you will find all the files you need in your file panel.
 
-My main assignment script that you should open is found in the `assignment_answers.Rmd` file
+My main assignment script that you should open is found in the `assignment_answers.Rmd` file.
 
 Happy coding :)
