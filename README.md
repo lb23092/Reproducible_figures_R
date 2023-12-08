@@ -1,9 +1,11 @@
 # Instructions: 
 
-1) Press the green code button
-2) Download the ZIP file onto your local computer
-3) Open `Penguin_answers.Rproj` in R-studio
+1) Open R Studio on your computer
+2) Create a new project -> select Version control -> Git
+3) Copy and Paste my repositry URL when prompted: https://github.com/lb23092/Reproducible_figures_R.git
+4) Click create project
 
-Once you have done this, you will find all the files you need in your file pane
+Once you have done this, you will find all the files you need in your file pane!
+My main assignment script that you should open is found in the `assignment_answers.Rmd` file
 
 Happy coding :)
