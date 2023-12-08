@@ -36,7 +36,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Homework Template},
+  pdftitle={Assignment answers},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
@@ -102,7 +102,7 @@
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 
-\title{Homework Template}
+\title{Assignment answers}
 \author{}
 \date{\vspace{-2.5em}2023-10-09}
 
@@ -113,8 +113,10 @@
 \subsection{QUESTION 01: Data Visualisation for Science
 Communication}\label{question-01-data-visualisation-for-science-communication}}
 
-*Create a figure using the Palmer Penguin dataset that is correct but
-badly communicates the data.
+\hypertarget{create-a-figure-using-the-palmer-penguin-dataset-that-is-correct-but-badly-communicates-the-data.}{%
+\subsubsection{Create a figure using the Palmer Penguin dataset that is
+correct but badly communicates the
+data.}\label{create-a-figure-using-the-palmer-penguin-dataset-that-is-correct-but-badly-communicates-the-data.}}
 
 For this question, I decided to create a misleading scatter plot with
 Culmen depth on the x-axis, and Body mass on the y-axis. Here are the
@@ -253,8 +255,11 @@ saves it to our ``data'' folder:
 \end{Highlighting}
 \end{Shaded}
 
-\#\#\#My misleading figure The code to produce my misleading graph For
-the relationship between Culmen depth and Body mass was:
+\hypertarget{my-misleading-figure}{%
+\subsubsection{My misleading figure}\label{my-misleading-figure}}
+
+The code to produce my misleading graph For the relationship between
+Culmen depth and Body mass was:
 
 \begin{verbatim}
 ## `geom_smooth()` using formula = 'y ~ x'
@@ -268,10 +273,10 @@ the relationship between Culmen depth and Body mass was:
 ## Warning: Removed 2 rows containing missing values (`geom_point()`).
 \end{verbatim}
 
-\includegraphics{assignment_template_files/figure-latex/bad figure code-1.pdf}
+\includegraphics{assignment_answers_files/figure-latex/bad figure code-1.pdf}
 
 \hypertarget{how-my-design-choices-mislead-the-reader-about-the-underlying-data}{%
-\subsubsection{how my design choices mislead the reader about the
+\subsubsection{How my design choices mislead the reader about the
 underlying
 data}\label{how-my-design-choices-mislead-the-reader-about-the-underlying-data}}
 
@@ -327,7 +332,7 @@ produced using:
 ## `geom_smooth()` using formula = 'y ~ x'
 \end{verbatim}
 
-\includegraphics{assignment_template_files/figure-latex/unnamed-chunk-4-1.pdf}
+\includegraphics{assignment_answers_files/figure-latex/unnamed-chunk-4-1.pdf}
 
 You can save these figures as png's using the code:
 
@@ -364,68 +369,11 @@ You can save these figures as png's using the code:
 \hypertarget{question-2-data-pipeline}{%
 \subsection{QUESTION 2: Data Pipeline}\label{question-2-data-pipeline}}
 
-\emph{Write a data analysis pipeline in your .rmd RMarkdown file. You
-should be aiming to write a clear explanation of the steps, the figures
-visible, as well as clear code.}
-
-\emph{Your code should include the steps practiced in the lab session:}
-
-\begin{itemize}
-\item
-  \emph{Load the data}
-\item
-  \emph{Appropriately clean the data}
-\item
-  \emph{Create an Exploratory Figure (\textbf{not a boxplot})}
-\item
-  \emph{Save the figure}
-\item
-  \emph{\textbf{New}: Run a statistical test}
-\item
-  \emph{\textbf{New}: Create a Results Figure}
-\item
-  \emph{Save the figure}
-\end{itemize}
-
-\emph{An exploratory figure shows raw data, such as the distribution of
-the data. A results figure demonstrates the stats method chosen, and
-includes the results of the stats test.}
-
-\emph{Between your code, communicate clearly what you are doing and
-why.}
-
-\emph{Your text should include:}
-
-\begin{itemize}
-\item
-  \emph{Introduction}
-\item
-  \emph{Hypothesis}
-\item
-  \emph{Stats Method}
-\item
-  \emph{Results}
-\item
-  \emph{Discussion}
-\item
-  \emph{Conclusion}
-\end{itemize}
-
-\emph{You will be marked on the following:}
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi})}
-\item
-  Your code for readability and functionality
-\item
-  Your figures for communication
-\item
-  Your text communication of your analysis
-\end{enumerate}
-
-\emph{Below is a template you can use.}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\hypertarget{write-a-data-analysis-pipeline-in-your-.rmd-rmarkdown-file.-you-should-be-aiming-to-write-a-clear-explanation-of-the-steps-the-figures-visible-as-well-as-clear-code.}{%
+\subsubsection{Write a data analysis pipeline in your .rmd RMarkdown
+file. You should be aiming to write a clear explanation of the steps,
+the figures visible, as well as clear
+code.*}\label{write-a-data-analysis-pipeline-in-your-.rmd-rmarkdown-file.-you-should-be-aiming-to-write-a-clear-explanation-of-the-steps-the-figures-visible-as-well-as-clear-code.}}
 
 \hypertarget{introduction}{%
 \subsubsection{Introduction}\label{introduction}}
@@ -484,7 +432,7 @@ a graph of the relationship between Culmen length and Body Mass:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{assignment_template_files/figure-latex/Data Exploration-1.pdf}
+\includegraphics{assignment_answers_files/figure-latex/Data Exploration-1.pdf}
 
 The explanatory graph I have produced demonstrates the relationship
 between Culmen length and Body Mass, and I have also color coded the
@@ -593,7 +541,7 @@ produce it:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{assignment_template_files/figure-latex/unnamed-chunk-11-1.pdf}
+\includegraphics{assignment_answers_files/figure-latex/unnamed-chunk-11-1.pdf}
 
 In a Q-Q plot, the closer the data points sit to the line, the closer
 the residuals follow a normal distribution. So therefore, given that the
@@ -659,7 +607,7 @@ The code to re-do these tests using the transformed linear model:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{assignment_template_files/figure-latex/unnamed-chunk-13-1.pdf}
+\includegraphics{assignment_answers_files/figure-latex/unnamed-chunk-13-1.pdf}
 
 As you can see, the transformation has worked successfully given that a)
 the p value of the Shapiro-Wilk test is now above 0.05, and b) the
@@ -705,7 +653,7 @@ order to obtain the actual parameter estimates:
   Slope = 1.608818 (p = 0.0521 .)
 \end{itemize}
 
-\textbf{Interpretation}
+\textbf{Interpretation:}
 
 The fact that the intercept has a p-value of \textless0.05, means that
 the predicted value for Body mass is significantly different from 0 when
@@ -728,13 +676,13 @@ another type of model (e.g.~polynomial) wouldn't be more appropriate.
 \hypertarget{conclusion}{%
 \subsubsection{Conclusion}\label{conclusion}}
 
-\hypertarget{overall-there-is-no-significant-relationship-between-culmen-length-and-body-mass-in-palmer-penguins-generally-potentially-suggesting-that-beak-size-does-not-impact-eating-habits.-however-more-complex-analysis-should-be-applied-in-the-future-to-enhance-the-understanding-of-these-variables-further.}{%
-\subsection{Overall, there is no significant relationship between culmen
-length and body mass in Palmer Penguins generally, potentially
-suggesting that beak size does not impact eating habits. However, more
-complex analysis should be applied in the future to enhance the
-understanding of these variables
-further.}\label{overall-there-is-no-significant-relationship-between-culmen-length-and-body-mass-in-palmer-penguins-generally-potentially-suggesting-that-beak-size-does-not-impact-eating-habits.-however-more-complex-analysis-should-be-applied-in-the-future-to-enhance-the-understanding-of-these-variables-further.}}
+Overall, there is no significant relationship between culmen length and
+body mass in Palmer Penguins generally, potentially suggesting that beak
+size does not impact eating habits. However, more complex analysis
+should be applied in the future to enhance the understanding of these
+variables further.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{question-3-open-science}{%
 \subsection{QUESTION 3: Open Science}\label{question-3-open-science}}
@@ -746,7 +694,7 @@ further.}\label{overall-there-is-no-significant-relationship-between-culmen-leng
 files and subfolders used to GitHub. Do not include any identifiers such
 as your name. Make sure your GitHub repo is public.}
 
-\emph{GitHub link:}
+\emph{\url{https://github.com/lb23092/Reproducible_figures_R.git}}
 
 \emph{You will be marked on your repo organisation and readability.}
 

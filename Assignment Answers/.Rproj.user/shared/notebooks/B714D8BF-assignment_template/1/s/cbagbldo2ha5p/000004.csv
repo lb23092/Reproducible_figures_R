@@ -1,7 +1,0 @@
-"0","source(""functions/assignment_functions.r"")"
-"0",""
-"0","penguins_clean_Q2 <- penguins_raw  %>%"
-"0","    clean_column_names() %>%"
-"0","    shorten_species() %>%"
-"0","    remove_empty_columns_rows() %>%"
-"0","   remove_NA()"

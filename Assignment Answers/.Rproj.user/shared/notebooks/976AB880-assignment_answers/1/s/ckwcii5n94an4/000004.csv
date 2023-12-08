@@ -1,2 +1,0 @@
-"0","linear_model_culmen_length_body_mass <- lm(body_mass_g ~ culmen_length_mm, data = penguins_clean_Q2)"
-"0","summary(linear_model_culmen_length_body_mass)"

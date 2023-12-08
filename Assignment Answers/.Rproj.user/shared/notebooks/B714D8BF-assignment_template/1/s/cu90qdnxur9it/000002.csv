@@ -1,7 +1,0 @@
-"0","dir.create(""data"")"
-"2","Warning in dir.create(""data"") :"
-"2"," 'data' already exists
-"
-"0","write.csv(penguins_raw, ""data/penguins_raw.csv"")"
-"0",""
-"0","penguins_raw <- penguins_raw"

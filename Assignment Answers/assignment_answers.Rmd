@@ -10,15 +10,16 @@ date: "2023-10-09"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
 ## QUESTION 01: Data Visualisation for Science Communication
-*Create a figure using the Palmer Penguin dataset that is correct but badly communicates the data. 
 
-For this question, I decided to create a misleading scatter plot with Culmen depth on the x-axis, and Body mass on the y-axis. Here are the steps for this analysis: 
+### Create a figure using the Palmer Penguin dataset that is correct but badly communicates the data.
 
-Firstly, I had to install and load the relevant packages: 
+For this question, I decided to create a misleading scatter plot with Culmen depth on the x-axis, and Body mass on the y-axis. Here are the steps for this analysis:
+
+Firstly, I had to install and load the relevant packages:
 
 Installing packages:
+
 ```{r,install packages}
 #install.packages("palmer penguins")
 #install.packages("ggplot2")
@@ -31,6 +32,7 @@ Installing packages:
 ```
 
 Attaching packages:
+
 ```{r,attach packages}
 library(palmerpenguins)
 library(ggplot2)
@@ -42,12 +44,14 @@ library(rmarkdown)
 library(tinytex)
 ```
 
-This code can be run to create a file containing information about the packages I used for the analysis. If you come across an issue when running my code, this can be checked to make sure its not because of discrepancies in the versions being used. You can also find this information stored in the file`package_infromation.txt` of my packages folder.
+This code can be run to create a file containing information about the packages I used for the analysis. If you come across an issue when running my code, this can be checked to make sure its not because of discrepancies in the versions being used. You can also find this information stored in the file `package_infromation.txt` of my packages folder.
+
 ```{r,packages}
 #sink("package_information.txt")
 ```
 
-The data I used is already part of the Palmer Penguins package. However, it may be useful to save a version of this raw data to your directory. This code creates a folder called "data" and within it, a file containing the raw data. Although not a necessary step, the final line can be used to create a raw data object in your own environment. 
+The data I used is already part of the Palmer Penguins package. However, it may be useful to save a version of this raw data to your directory. This code creates a folder called "data" and within it, a file containing the raw data. Although not a necessary step, the final line can be used to create a raw data object in your own environment.
+
 ```{r}
 dir.create("data")
 write.csv(penguins_raw, "data/penguins_raw.csv")
@@ -56,6 +60,7 @@ penguins_raw <- penguins_raw
 ```
 
 Next, the data needs to be cleaned, and "clean_names()", a function in janitor, can help to do this. It is designed to make column names more consistent by converting them to lowercase, removing special characters and replacing spaces with underscores. Additionally, "filter" is used in this instance to select for rows that contain values for both culmen depth and body mass, and select is to isolate these columns.
+
 ```{r}
 penguins_clean_Q1 <- penguins_raw %>%
   clean_names() %>%  
@@ -64,13 +69,15 @@ penguins_clean_Q1 <- penguins_raw %>%
 ```
 
 Next, it is important to save this cleaned data as a file. This code saves it to our "data" folder:
+
 ```{r}
 write.csv(penguins_clean_Q1, "data/penguins_clean_Q1")
 ```
 
-###My misleading figure
-The code to produce my misleading graph
-For the relationship between Culmen depth and Body mass was:
+### My misleading figure
+
+The code to produce my misleading graph for the relationship between Culmen depth and Body mass:
+
 ```{r bad figure code, echo=FALSE}
 misleading_graph <-ggplot(penguins_clean_Q1, aes(x = culmen_depth_mm, y = body_mass_g)) +
   geom_point(size =1, alpha = 0.4) +
@@ -82,11 +89,12 @@ misleading_graph <-ggplot(penguins_clean_Q1, aes(x = culmen_depth_mm, y = body_m
   misleading_graph
 ```
 
-### how my design choices mislead the reader about the underlying data
+### How my design choices mislead the reader about the underlying data
 
-Although this figure is technically correct, it is intentionally misleading. One of the ways I've achieved this is by setting the x-axis limits between 0 and 6000g. Given that we are studying penguins, they are unlikely to have a body mass less than 2000g, so making the axis cover such a large range gives the impression that it varies less than it actually does when taken in context. However, the main issue with this graph relates to Simpson's Paradox (Ameringer 2010 and references therein). Simpson's paradox is a statistical phenomenon whereby a trend present in different subsets of data dissapears or reverses when the groups are combined. According to the graph I have produced and its linear regression line shown in black, there is a negative correlation between Culmen depth and Body Mass. However, when you subset the data into the different penguin species - Adelie, Gentoo and Chinstrap - the correlation between these variables is actually positive. My aesthetic choices may also cause confusion. For example, I have made my points small and transparent meaning they are difficult to interpret. Furthermore, the fact that the linear regression line is black could cause issues. Ideally, they would be a bright colour to provide high contrast from the other data points.
+Although this figure is technically correct, it is intentionally misleading. One of the ways I've achieved this is by setting the x-axis limits between 0 and 6000 g. Given that we are studying penguins, they are unlikely to have a body mass less than 2000 g, so making the axis cover such a large range gives the impression that it varies less than it actually does when taken in context. However, the main issue with this graph relates to Simpson's Paradox (Ameringer 2010 and references therein). Simpson's paradox is a statistical phenomenon whereby a trend present in different subsets of data disappears or reverses when the groups are combined. According to the graph I have produced and the linear regression line shown in black, there is a negative correlation between Culmen depth and Body Mass. However, when you subset the data into the different penguin species - Adelie, Gentoo and Chinstrap - the correlation between these variables is actually positive. My aesthetic choices may also cause confusion. For example, I have made my points small and transparent meaning they are difficult to interpret. Furthermore, the fact that the linear regression line is black could cause issues. Ideally, it would be a bright colour to provide high contrast from the other data points.
 
-A better figure, which splits the relationship by species, can be produced using:  
+A better figure, which splits the relationship by species, can be produced using:
+
 ```{r}
 improved_graph <- ggplot(penguins_clean_Q1, aes(x = culmen_depth_mm, y = body_mass_g, color = species)) +
   geom_point() +
@@ -98,7 +106,7 @@ improved_graph <- ggplot(penguins_clean_Q1, aes(x = culmen_depth_mm, y = body_ma
 improved_graph
 ```
 
-You can save these figures as png's using the code: 
+You can save these figures as PNGs using the code:
 
 ```{r}
 ggsave("figures/Q1_misleading_graph.png", plot = misleading_graph, width = 8, height = 6, units = "in")
@@ -109,59 +117,14 @@ ggsave("figures/Q1_improved_graph.jpg", plot = improved_graph, width = 8, height
 
 ## QUESTION 2: Data Pipeline
 
-*Write a data analysis pipeline in your .rmd RMarkdown file. You should be aiming to write a clear explanation of the steps, the figures visible, as well as clear code.*
-
-*Your code should include the steps practiced in the lab session:*
-
--   *Load the data*
-
--   *Appropriately clean the data*
-
--   *Create an Exploratory Figure (**not a boxplot**)*
-
--   *Save the figure*
-
--   ***New**: Run a statistical test*
-
--   ***New**: Create a Results Figure*
-
--   *Save the figure*
-
-*An exploratory figure shows raw data, such as the distribution of the data. A results figure demonstrates the stats method chosen, and includes the results of the stats test.*
-
-*Between your code, communicate clearly what you are doing and why.*
-
-*Your text should include:*
-
--   *Introduction*
-
--   *Hypothesis*
-
--   *Stats Method*
-
--   *Results*
-
--   *Discussion*
-
--   *Conclusion*
-
-*You will be marked on the following:*
-
-a) Your code for readability and functionality
-
-b) Your figures for communication
-
-c) Your text communication of your analysis
-
-*Below is a template you can use.*
-
-------------------------------------------------------------------------
+### Write a data analysis pipeline in your .rmd RMarkdown file. You should be aiming to write a clear explanation of the steps, the figures visible, as well as clear code.\*
 
 ### Introduction
 
-In this analysis, I want to find out whether a statistically significant linear relationship exists between Culmen length and Body mass. If such a relationship is established it shows that there is a systematic association between the two variables, meaning that there is a degree of power in being able to predict one variable from another. This could be very useful to scientists, especially given that body mass is often practically challenging to measure in penguins. Furthermore, the relationship between the variables could provide interesting biological insights. For example, if the relationship is positive, it may suggest that having a larger beak facilitates more successful feeding therefore allowing the penguin to sustain a higher body mass. It is important to note that whilst sub-setting by species may provide a result with higher statistical significance, I believe that a model like mine would be more generalization. For example, if a researcher has a penguin that is not one of these three species, mind model will be preferred given that it takes into account more species. My analysis is carried out using data stored in the "Palmer Penguin" package. 
+In this analysis, I want to find out whether a statistically significant linear relationship exists between Culmen length and Body mass. If such a relationship is established it shows that there is a systematic association between the two variables, meaning that there is a degree of power in being able to predict one variable from another. This could be very useful to scientists, especially given that body mass is often practically challenging to measure in penguins. Furthermore, the relationship between the variables could provide interesting biological insights. For example, if the relationship is positive, it may suggest that having a larger beak facilitates more successful feeding therefore allowing the penguin to sustain a higher body mass. It is important to note that whilst sub-setting by species may provide a result with higher statistical significance, I believe that a model like mine would be more generalizable. For example, if a researcher has a penguin that is not one of these three species, mine model will be preferred as it takes into account more species. My analysis is carried out using data stored in the "Palmer Penguin" package.
 
-Before using the data, it must be cleaned. I have already created a file containing useful functions and their descriptions in my "functions" folder, and some of these can be used in this step. The function source() is included to retrieve them:
+Before using the data, it must be cleaned. I have already created a file containing useful functions and their descriptions in my "functions" folder, and some of these can be used in this step. The function `source()` is included to retrieve them:
+
 ```{r}
 source("functions/assignment_functions.r")
 
@@ -173,48 +136,53 @@ penguins_clean_Q2 <- penguins_raw  %>%
 ```
 
 Next, it is important to save this cleaned data as a file. This code saves it to our "data" folder:
+
 ```{r}
 write.csv(penguins_clean_Q2, "data/penguins_clean_Q2")
 ```
 
 This code and the function it contains, uses the cleaned data to produce a graph of the relationship between Culmen length and Body Mass:
+
 ```{r Data Exploration}
 explanatory_plot <-explanatory_plot(penguins_clean_Q2)
 explanatory_plot
 ```
 
-The explanatory graph I have produced demonstrates the relationship between Culmen length and Body Mass, and I have also color coded the points based on species. One of the reasons for doing this was to check for Simpson's paradox as mentioned earlier. But as you can see, the general trend is that there is a positive relationship between Culmen length and Body Mass, and this holds true within species also.
+The explanatory graph I have produced demonstrates the relationship between Culmen length and Body Mass, and I have also colour coded the points based on species. One of the reasons for doing this was to check for Simpson's paradox as mentioned earlier. But as you can see, the general trend is that there is a positive relationship between Culmen length and Body Mass, and this holds true within species also.
 
-We can save the figure as a png using this code:
+We can save the figure as a PNG using this code:
+
 ```{r}
 ggsave("figures/Q2_exploratory_plot.png", plot = explanatory_plot, width = 8, height = 6, units = "in")
 ```
 
-
 ### Hypothesis
 
-- H0 (null hypothesis): there is no statistically significant linear relationship between Culmen length and Body mass for Palmer Penguins (aka. slope β = 0)
-- HA (alternative hypothesis): there is a statistically significant linear relationship between Culmen length and Body mass for Palmer Penguins (aka. slope β ≠ 0)
-
+-   H~0~ (null hypothesis): there is no statistically significant linear relationship between Culmen length and Body mass for Palmer Penguins (aka. slope β = 0)
+-   H~A~ (alternative hypothesis): there is a statistically significant linear relationship between Culmen length and Body mass for Palmer Penguins (aka. slope β ≠ 0)
 
 ### Statistical Methods
 
-To be able carry out linear regression analysis, multiple assumptions must be met. One of the most important is that the residuals (the differences between the observed values and the values predicted by the regression model) should be follow a normal distribution. For my statistical method therefore, I decided to test this assumption in two ways: 1)  by carrying out the Shapiro-Wilk test, and 2) by producing a Quantile-Quantile (QQ plot).
+To be able carry out linear regression analysis, multiple assumptions must be met. One of the most important is that the residuals (the differences between the observed values and the values predicted by the regression model) should follow a normal distribution. For my statistical method therefore, I decided to test this assumption in two ways: 1) by carrying out the Shapiro-Wilk test, and 2) by producing a Quantile-Quantile (Q-Q plot).
 
-Before testing the normal distribution assumption, you first have to run the linear regression to obtain the residual data. The function lm() can be used to do this: 
+Before testing the normal distribution assumption, you first have to run the linear regression to obtain the residual data. The function `lm()` can be used to do this:
+
 ```{r}
 linear_model_culmen_length_body_mass <- lm(body_mass_g ~ culmen_length_mm, data = penguins_clean_Q2)
 summary(linear_model_culmen_length_body_mass)
 ```
 
-Now we have the linear model, we can run the Shapiro-Wilk test using the "Shapiro.test()" function:
+Now we have the linear model, we can run the Shapiro-Wilk test using the `Shapiro.test()` function:
+
 ```{r}
 shapiro_test_results <- shapiro.test(residuals(linear_model_culmen_length_body_mass))
 shapiro_test_results
 ```
-The Shapiro-Wilk test is used to test a null hypothesis that the data is normally distributed. Therefore, given that our p-value is <0.05, we have to reject it. Ultimately, this has shown that the residuals are not normally distributed.
 
-Now we want to see whether the Quantile-Quantile plot produces the same result. The functions ""qqnorm()" and "qqline()" can be used to produce it:
+The Shapiro-Wilk test is used to test a null hypothesis that the data is normally distributed. Therefore, given that our p-value is \<0.05, we have to reject it. Ultimately, this has shown that the residuals are not normally distributed.
+
+Now we want to see whether the Quantile-Quantile plot produces the same result. The functions `qqnorm()` and `qqline()` can be used to produce it:
+
 ```{r}
 qqnorm(residuals(linear_model_culmen_length_body_mass)) 
 qqline(residuals(linear_model_culmen_length_body_mass))
@@ -223,12 +191,14 @@ qqline(residuals(linear_model_culmen_length_body_mass))
 In a Q-Q plot, the closer the data points sit to the line, the closer the residuals follow a normal distribution. So therefore, given that the points do not follow the line exactly, we have to assume that our residuals are not normal. This supports the result of the Shapiro-Wilk test.
 
 Given that both of my tests revealed that the residuals are not normally distributed, we cannot carry out linear regression analysis on the data as it is at the moment. For this reason, we must apply a transformation to try and make them normal. I decided to take the natural log (ln) of both variables, by incorporating log() into my model:
+
 ```{r}
 linear_model_culmen_length_body_mass_transformed <- lm((log(body_mass_g)) ~ (log(culmen_length_mm)), data = penguins_clean_Q2)
 summary(linear_model_culmen_length_body_mass_transformed)
 ```
 
 The code to re-do these tests using the transformed linear model:
+
 ```{r}
 shapiro_test_results_transformed <- shapiro.test(residuals(linear_model_culmen_length_body_mass_transformed))
 shapiro_test_results_transformed
@@ -238,9 +208,10 @@ qqline(residuals(linear_model_culmen_length_body_mass_transformed))
 
 ```
 
-As you can see, the transformation has worked successfully given that a) the p value of the Shapiro-Wilk test is now above 0.05, and b) the points on the Q-Q plot now follow the line more closely. So the new transformed linear regression's residuals are now normally distributed. 
+As you can see, the transformation has worked successfully given that a) the p value of the Shapiro-Wilk test is now above 0.05, and b) the points on the Q-Q plot now follow the line more closely. So the new transformed linear regression's residuals are now normally distributed.
 
-Finally, we must back-transform the results of the linear regression, in order to obtain the actual parameter estimates: 
+Finally, we must back-transform the results of the linear regression, in order to obtain the actual parameter estimates:
+
 ```{r}
 final_intercept <- exp(6.4427) 
 final_slope <- exp(0.4755) 
@@ -248,21 +219,22 @@ final_slope <- exp(0.4755)
 final_intercept
 final_slope
 ```
+
 ### Results & Discussion
 
 **The results of my linear regression are:**
 
-- Intercept = 628.1004 (p = 3.51e-08)
-- Slope = 1.608818 (p = 0.0521 .)
+-   Intercept = 628.1004 (p = 3.51e-08)
+-   Slope = 1.608818 (p = 0.0521 .)
 
 **Interpretation:**
 
-The fact that the intercept has a p-value of <0.05, means that the predicted value for Body mass is significantly different from 0 when the value for Culmen length is 0. However, given that the slope has a p-value of >0.05, means that *the relationship between the two variables is not statistically significant.* The multiple R-squared of my model is 0.1129, this means that only 11.29% of the variation in body mass is explained by culmen length. The higher this value the better, so overall, the model is not a great fit to the data. Perhaps this is not surprising however. As evident in my analysis, I simply fitted a model to the data as a whole, instead of sub-setting it into different species. As shown by my exploratory graph, the relationship within-species appeared stronger than the overall trend, so testing linear regression on each individually could be worthwhile in the future. Furthermore, of course this analysis relies on the assumption that our variables *have* a linear relationship which may not be the case. So this should be carefully checked to ensure that another type of model (e.g. polynomial) wouldn't be more appropriate.
+The fact that the intercept has a p-value of \<0.05 means that the predicted value for Body mass is significantly different from zero when the value for Culmen length is zero. However, given that the slope has a p-value of \>0.05 means that *the relationship between the two variables is not statistically significant.* The multiple R-squared of my model is 0.1129, this means that only 11.29% of the variation in body mass is explained by Culmen length. The higher this value the better, so overall, the model is not a great fit to the data. Perhaps this is not surprising however. As evident in my analysis, I simply fitted a model to the data as a whole, instead of sub-setting it into different species. As shown by my exploratory graph, the relationship within species appeared stronger than the overall trend, so testing linear regression on each individually could be worthwhile in the future. Furthermore, of course this analysis relies on the assumption that our variables *have* a linear relationship which may not be the case. So this should be carefully checked to ensure that another type of model (e.g. polynomial) wouldn't be more appropriate.
 
 ### Conclusion
 
-Overall, there is no significant relationship between culmen length and body mass in Palmer Penguins generally, potentially suggesting that beak size does not impact eating habits. However, more complex analysis should be applied in the future to enhance the understanding of these variables further. 
- 
+Overall, there is no significant relationship between Culmen length and body mass in Palmer Penguins generally, potentially suggesting that beak size does not impact eating habits. However, more complex analysis should be applied in the future to enhance the understanding of these variables further.
+
 ------------------------------------------------------------------------
 
 ## QUESTION 3: Open Science
@@ -271,7 +243,7 @@ Overall, there is no significant relationship between culmen length and body mas
 
 *Upload your RProject you created for **Question 2** and any files and subfolders used to GitHub. Do not include any identifiers such as your name. Make sure your GitHub repo is public.*
 
-*GitHub link:*
+[*https://github.com/lb23092/Reproducible_figures_R.git*](https://github.com/lb23092/Reproducible_figures_R.git){.uri}
 
 *You will be marked on your repo organisation and readability.*
 
